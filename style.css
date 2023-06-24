@@ -3,6 +3,7 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Scroll Bar  */
@@ -125,6 +126,8 @@ main {
 
     .navbar-nav {
         flex-direction: row;
+        overflow: scroll;
+        scrollbar-width: none;
     }
     .navbar-link {
         justify-content: center;
@@ -141,6 +144,8 @@ main {
         width: 4rem;
         height: 100vh;
     }
+
+    
 
     .navbar:hover .link-text {
         display: inline;
