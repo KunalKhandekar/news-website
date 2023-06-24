@@ -1,0 +1,149 @@
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Scroll Bar  */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+::-webkit-scrollbar-thumb {
+    background: #6649b8;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6036d5;
+}
+
+main {
+    margin-left: 4rem;
+    padding: 1rem;
+}
+
+.navbar {
+    position: fixed;
+    background-color: #1e1e24;
+    transition: 250ms ease-in;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    color: aliceblue;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 600ms;
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: #000000;
+}
+
+.nav-link:hover i {
+    color: #6036d5;
+}
+.nav-link:hover .link-text {
+    color: white;
+}
+.nav-link i {
+    width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.link-text {
+    display: none;
+}
+
+.navbar:hover {
+    width: 12rem;
+}
+
+.navbar:hover .link-text {
+    display: block;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #6649b8;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo svg {
+    transform: rotate(0deg);
+    width: 20px;
+    margin: 0 1.5rem;
+    transition: transform 600ms;
+}
+
+.logo .link-text {
+    margin-left: 45px;
+}
+
+.logo .nav-link:hover {
+    background-color: #1e1e24;
+}
+
+.navbar:hover .logo svg {
+    transform: rotate(-180deg);
+}
+
+@media only screen and (max-width:600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 4rem;
+    }
+
+    .navbar:hover {
+        width: 100%;
+    }
+
+    .nav-link i {
+        width: 1rem;
+    }
+
+    .logo, .navbar:hover .link-text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width:600px) {
+    .navbar {
+        top: 0;
+        width: 4rem;
+        height: 100vh;
+    }
+
+    .navbar:hover .link-text {
+        display: inline;
+        transition: opacity 600ms;
+    }
+}
