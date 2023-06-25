@@ -21,20 +21,13 @@ if (date < 10) {
 };
 let currentDate = `${year}-${month}-${date}`; //current date
 
-// 
 const ApiKey = '428004b880154e6984a712527d4823fe'; //API Key
 const url = 'https://newsapi.org/v2/everything?'; // Api Url
-// https://newsapi.org/v2/everything?q=cricket-football&from=2023-06-25&excludeDomains=Hplusmagazine.com&sortBy=publishedAt&language=en&apiKey=428004b880154e6984a712527d4823fe
 window.addEventListener("load", () => fetchNews('india')); // FetchNews On Window load
 
+// for NavBar Click 
 async function clickonNav(q) {
     await fetchNews(q);
-}
-
-async function topHeadlines() {
-    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${ApiKey}`);
-    const data = await response.json();
-    binderBot(data.articles);
 }
 
 // Async Function for Fetching News
@@ -74,7 +67,8 @@ function binderBot(articles) {
             </div>
         </div>
     </div>`
-        // creates a clone of NewsCard-template.
+
+        // Append the News-Box to News-Container.
         NewsCont.innerHTML = NewsCont.innerHTML + box;
     });
 };
