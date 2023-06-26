@@ -4,18 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Global Insight: Unveiling the World's Stories</title>
+    <link rel="shortcut icon" href="./images/BBBC-News.png" type="image/x-icon">
+
+    <!-- ============ STYLE CSS ================= -->
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="responsive.css">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- ============== FONT AWESOME ============ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
 
 <body>
-    
-    <!-- NAVBAR Starts -->
+
+<!-- ======================== NAVBAR ======================== -->
     <nav class="navbar">
-        <ul class="navbar-nav">
-            <li class="logo">
+        <ul class="navbar-nav" id="navbar-nav">
+            <li class="logo" onclick="fetchNews('india')">
                 <a href="" class="nav-link">
                     <span class="link-text">News</span>
                     <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right"
@@ -23,11 +31,11 @@
                         class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x">
                         <g class="fa-group">
                             <path fill="currentColor"
-                            d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
-                            class="fa-secondary"></path>
+                                d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
+                                class="fa-secondary"></path>
                             <path fill="currentColor"
-                            d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
-                            class="fa-primary"></path>
+                                d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
+                                class="fa-primary"></path>
                         </g>
                     </svg>
                 </a>
@@ -68,13 +76,131 @@
                     <span class="link-text">Technology</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="videoNews()">
+                    <i class="fa-solid fa-video"></i>
+                    <span class="link-text">LIVE</span>
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <!-- Main Container to display News -->
+    <!-- ============== SEARCH BAR ============ -->
+    <div class="container">
+        <form action="" class="search" id="search-bar">
+            <input type="search" placeholder="Type something..." name="" class="search__input" id="input_box">
+
+            <div class="search__button" id="search-button">
+                <i class="ri-search-2-line search__icon"></i>
+                <i class="ri-close-line search__close"></i>
+            </div>
+        </form>
+    </div>
+
     <main>
-        <div class="cards-container" id="News-container"></div>
+
+        <!-- ============== ARTICLE NEWS ============ -->
+        <div class="cards-container" id="News-container">
+        </div>
+        <div id="error-container" class="error-container" style="visibility: hidden;">
+            <div class="err-img">
+                <img src="./images/sad.png" alt="errorr img">
+            </div>
+            <p id="error-message"></p>
+            <button class="btn" onclick="fetchNews('india')">Back to Home Page</button>
+        </div>
+
+        <!-- ============== VIDEO NEWS ============ -->
+        <div class="main-news" id="videoNews">
+            <div class="livenews" id="ndtv">
+                <iframe src="https://www.youtube.com/embed/SYFU3ez0c4s" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/PKwLsAu-z10" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/oIOnCCljFdw" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/gUBvELxS4jg" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/oIOnCCljFdw" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboar gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="livenews" id="abp">
+                <iframe src="https://www.youtube.com/embed/1U7u0abFTtE" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/yfXpFPu9fFg" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/MN8p-Vrn6G0" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/Nen3UXaWDDE" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/fARbzr45VCU" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="livenews" id="timesofindia">
+                <iframe src="https://www.youtube.com/embed/2w_pbsROM-Y" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/mIFutjv_VeU" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/bUM-Y5EwluI" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/M_jXD6eGjRg" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/jqHEEZ34cUU" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="livenews" id="Tv9">
+                <iframe src="https://www.youtube.com/embed/ATVE4Nnr0bk" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/II_m28Bm-iM" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/74jon7dWATA" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/04y0H01GTg0" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/jdJoOhqCipA" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="livenews" id="hindustan_times">
+                <iframe src="https://www.youtube.com/embed/YJykg777VMs" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/7vTDD_P71Kg" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/KcBmWCueMUI" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/Y55kgvkHk3g" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/h87yzvH3NBs" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
     </main>
+
+    <!-- ============= Java Script =============== -->
     <script src="script.js"></script>
 </body>
 

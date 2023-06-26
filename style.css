@@ -1,26 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --first-color: hsl(222, 80%, 58%);
+    --dark-color: hsl(222, 24%, 8%);
+    --title-color: hsl(222, 8%, 8%);
+    --text-color-light: hsl(222, 8%, 65%);
+    --white-color: #fff;
+    --body-color: hsl(222, 100%, 99%);
+}
+
 * {
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: transparent;
     scrollbar-color: transparent transparent;
     scrollbar-width: none;
-    -ms-overflow-style: none;  /* IE and Edge */
+    -ms-overflow-style: none;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    color: black;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
 }
 
 /* Scroll Bar  */
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: none;
 }
 
 /* Vertical NavBar */
 .navbar {
     position: fixed;
-    background-color: #1e1e24;
+    background-color: #212121;
     transition: 250ms ease-in;
 }
 
@@ -36,6 +47,10 @@ body {
     color: white;
 }
 
+.navbar ul:nth-child(6) {
+    margin-top: auto;
+}
+
 .navbar-nav {
     list-style: none;
     padding: 0;
@@ -48,6 +63,7 @@ body {
     display: flex;
     align-items: center;
     height: 4rem;
+
     color: aliceblue;
     text-decoration: none;
     transition: 600ms;
@@ -68,7 +84,9 @@ body {
 }
 
 .link-text {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 100ms, opacity 1s linear;
 }
 
 .navbar:hover {
@@ -76,7 +94,8 @@ body {
 }
 
 .navbar:hover .link-text {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .logo {
@@ -100,7 +119,7 @@ body {
 }
 
 .logo .nav-link:hover {
-    background-color: #1e1e24;
+    background-color: #212121;
 }
 
 .navbar:hover .logo svg {
@@ -111,24 +130,117 @@ body {
 main {
     margin-left: 4rem;
     padding: 1rem;
+    background-color: #000;
+    min-height: 100vh;
 }
+
+/* SEARCH */
+.container {
+    position: fixed;
+    top: 2%;
+    right: 2%;
+}
+
+.search {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 24px hsla(222, 68%, 12%, 0.1);
+    border-radius: 4rem;
+    overflow: hidden;
+    transition: width 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+
+.search__input {
+    border: none;
+    outline: none;
+    width: 400px;
+    height: 100%;
+    border-radius: 4rem;
+    padding-left: 30px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s;
+}
+
+.search__input:-webkit-autofill {
+    box-shadow: 0 0 0 100px var(--white-color) inset;
+}
+
+.search__button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--dark-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+
+.search__icon,
+.search__close {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    position: absolute;
+    transition: opacity 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+
+.search__close {
+    opacity: 0;
+}
+
+/* Search animated */
+.show-search {
+    width: 100%;
+}
+
+.show-search .search__input {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.show-search .search__button {
+    transform: rotate(90deg);
+}
+
+.show-search .search__icon {
+    opacity: 0;
+}
+
+.show-search .search__close {
+    opacity: 1;
+}
+
 
 /* News-Container */
 .cards-container {
     display: flex;
-    justify-content: space-between;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
 }
 
+.cards-container a {
+    text-decoration: none;
+}
+
 .news-card {
-    width: 360px;
     min-height: 360px;
     border-radius: 7px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .12);
     cursor: pointer;
-    background-color: #fff;
+    background-color: #212121;
     overflow: hidden;
     transition: 0.4s all ease-in;
     padding: 10px;
@@ -138,6 +250,7 @@ main {
     width: 100%;
     height: 180px;
     overflow: hidden;
+    border-radius: 7px;
 }
 
 .news-info {
@@ -145,13 +258,19 @@ main {
 }
 
 .main-info {
-    height: 175px;
+    height: 150px;
     overflow: scroll;
 }
 
+.news-info .news-title {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
 .news-info .news-desc {
-    text-align: justify;
     padding-block: 10px;
+    color: #b0b5c0;
+    font-size: 0.9em;
 }
 
 .divider {
@@ -162,6 +281,8 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #ffffff;
+    font-size: 0.9em;
 }
 
 .news-info .source-time .source {
@@ -177,6 +298,59 @@ main {
     border-radius: 50%;
 }
 
+/* error container  */
+.error-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #000;
+    color: #fff;
+}
+
+.error-container .err-img img {
+    width: 150px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.error-container p {
+    font-size: 25px;
+}
+
+.error-container .btn {
+    background-color: #6036d5;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.error-container .btn:hover {
+    transform: scale(1.1);
+    
+}
+
+.main-news {
+    display: none;
+}
+
+.main-news .livenews {
+    height: 200px;
+    display: flex;
+    gap: 30px;
+    overflow: scroll;
+    padding: 20px;
+}
+
+.main-news .livenews iframe {
+    border-radius: 14px;
+    width: 400px;
+}
+
 /* Media Queries And Responsiveness  */
 @media only screen and (max-width:600px) {
     .navbar {
@@ -187,6 +361,10 @@ main {
 
     .navbar:hover {
         width: 100%;
+    }
+
+    .nav-link {
+        width: 4rem;
     }
 
     .nav-link i {
@@ -219,8 +397,6 @@ main {
         width: 4rem;
         height: 100vh;
     }
-
-
 
     .navbar:hover .link-text {
         display: inline;
