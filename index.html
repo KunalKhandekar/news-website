@@ -23,7 +23,7 @@
 <!-- ======================== NAVBAR ======================== -->
     <nav class="navbar">
         <ul class="navbar-nav" id="navbar-nav">
-            <li class="logo" onclick="fetchNews('india')">
+            <li class="logo" onclick="fetchNews('Latest news')">
                 <a href="" class="nav-link">
                     <span class="link-text">News</span>
                     <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right"
@@ -46,7 +46,7 @@
                     <span class="link-text">Trends</span>
                 </a>
             </li>
-            <li class="nav-item" onclick="clickonNav('indian politics')">
+            <li class="nav-item" onclick="clickonNav('Indian politics')">
                 <a href="#" class="nav-link">
                     <i class="fa-solid fa-handshake"></i>
                     <span class="link-text">Politics</span>
@@ -58,14 +58,14 @@
                     <span class="link-text">Education</span>
                 </a>
             </li>
-            <li class="nav-item" onclick="clickonNav('cricket football')">
+            <li class="nav-item" onclick="clickonNav('Indian Sports')">
                 <a href="#" class="nav-link">
                     <i class="fa-solid fa-person-running"></i>
                     <span class="link-text">Sports</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link" onclick="clickonNav('paisa')">
+                <a href="#" class="nav-link" onclick="clickonNav('money in india')">
                     <i class="fa-solid fa-money-check-dollar"></i>
                     <span class="link-text">Money</span>
                 </a>
@@ -74,12 +74,6 @@
                 <a href="#" class="nav-link" onclick="clickonNav('Technology AI')">
                     <i class="fas fa-server"></i>
                     <span class="link-text">Technology</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" onclick="videoNews()">
-                    <i class="fa-solid fa-video"></i>
-                    <span class="link-text">LIVE</span>
                 </a>
             </li>
         </ul>
@@ -107,101 +101,14 @@
                 <img src="./images/sad.png" alt="errorr img">
             </div>
             <p id="error-message"></p>
-            <button class="btn" onclick="fetchNews('india')">Back to Home Page</button>
+            <button class="btn" onclick="fetchNews('Latest news in India')">Back to Home Page</button>
         </div>
 
-        <!-- ============== VIDEO NEWS ============ -->
-        <div class="main-news" id="videoNews">
-            <div class="livenews" id="ndtv">
-                <iframe src="https://www.youtube.com/embed/SYFU3ez0c4s" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/PKwLsAu-z10" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/oIOnCCljFdw" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/gUBvELxS4jg" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/oIOnCCljFdw" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboar gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="livenews" id="abp">
-                <iframe src="https://www.youtube.com/embed/1U7u0abFTtE" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/yfXpFPu9fFg" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/MN8p-Vrn6G0" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/Nen3UXaWDDE" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/fARbzr45VCU" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="livenews" id="timesofindia">
-                <iframe src="https://www.youtube.com/embed/2w_pbsROM-Y" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/mIFutjv_VeU" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/bUM-Y5EwluI" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/M_jXD6eGjRg" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/jqHEEZ34cUU" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="livenews" id="Tv9">
-                <iframe src="https://www.youtube.com/embed/ATVE4Nnr0bk" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/II_m28Bm-iM" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/74jon7dWATA" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/04y0H01GTg0" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/jdJoOhqCipA" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="livenews" id="hindustan_times">
-                <iframe src="https://www.youtube.com/embed/YJykg777VMs" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/7vTDD_P71Kg" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/KcBmWCueMUI" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/Y55kgvkHk3g" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/h87yzvH3NBs" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
+
     </main>
 
     <!-- ============= Java Script =============== -->
-    <script src="script.js"></script>
+    <script src="newscript.js"></script>
 </body>
 
 </html>

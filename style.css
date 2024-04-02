@@ -320,7 +320,7 @@ main {
     font-size: 25px;
 }
 
-.error-container .btn {
+.btn {
     background-color: #6036d5;
     color: #fff;
     padding: 5px 15px;
@@ -329,7 +329,7 @@ main {
     cursor: pointer;
 }
 
-.error-container .btn:hover {
+.btn:hover {
     transform: scale(1.1);
     
 }
@@ -350,6 +350,8 @@ main {
     border-radius: 14px;
     width: 400px;
 }
+
+
 
 /* Media Queries And Responsiveness  */
 @media only screen and (max-width:600px) {
