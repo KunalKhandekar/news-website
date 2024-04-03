@@ -37,7 +37,14 @@ function getRandomApiKey() {
         'pub_4122923a03c0a20f6bb4289c9c5496b39d9b5',
         'pub_412319357f969a414c218d309488cc55d3fe4',
         'pub_4123227a7299c0362070b9ebc12abd45e8212',
-        'pub_411949034fc5008b2401bebd97e969c70f544'
+        'pub_411949034fc5008b2401bebd97e969c70f544',
+        'pub_41254b62fa044fa9321b72333ad753e2dfc92',
+        'pub_41255e97a7f6ba942544514f308fc70fe5fef',
+        'pub_412567659c6d66948c5849f0c4974046e9a2b',
+        'pub_412570501c91261de21039ffefffca18bef9c',
+        'pub_412592b2ff11f2b235b847a27b11f56496937',
+        'pub_412605220dd2106104a8ffcdc3453c6ab934b'
+
     ];
 
     const randomIndex = Math.floor(Math.random() * apiKeys.length);
